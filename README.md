@@ -56,28 +56,6 @@ python .\build_pose_assets.py
 
 > 如有新的点云块，同样放入 `data/` 目录，并重新运行 `build_pose_assets.py` 生成位姿锚点。
 
-## 首次上传到 GitHub
-
-```powershell
-# 1. 进入项目目录
-cd e:\20260601\no3\1
-
-# 2. 初始化 Git
-git init
-
-# 3. 添加所有代码文件（.ply 已被 .gitignore 排除）
-git add .
-
-# 4. 首次提交
-git commit -m "init: 3DGS + Point Cloud Detail Viewer"
-
-# 5. 关联远程仓库（替换为你的实际地址）
-git remote add origin https://github.com/your-username/your-repo.git
-
-# 6. 推送
-git push -u origin main
-```
-
 ## Clone 后恢复数据
 
 ```powershell
