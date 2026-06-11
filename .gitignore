@@ -1,0 +1,42 @@
+# ========== 点云 / 3DGS 数据文件（体积大，不入库） ==========
+*.ply
+*.laz
+*.las
+*.pcd
+*.e57
+
+# 数据目录下的所有文件也忽略（但保留目录本身）
+data/*
+!data/.gitkeep
+
+# ========== Python ==========
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.env
+
+# ========== 编辑器 / IDE ==========
+.vscode/
+.idea/
+*.suo
+*.user
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# ========== WorkBuddy / IDE 工作区私有配置 ==========
+.workbuddy/
+
+# ========== 日志 / 临时文件 ==========
+*.log
+*.tmp
+*.bak

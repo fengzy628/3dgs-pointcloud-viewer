@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3DGS + 高清点云查看器</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.165.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@0.165.0/examples/jsm/",
+          "@mkkellogg/gaussian-splats-3d": "https://unpkg.com/@mkkellogg/gaussian-splats-3d@0.4.7/build/gaussian-splats-3d.module.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="shell">
+      <section class="point-stage" aria-label="高清点云视窗">
+        <div id="pointCloudViewport" class="viewport"></div>
+        <div class="topbar">
+          <button id="loadCloud1" class="tool-button active" type="button">1.ply</button>
+          <button id="loadCloud2" class="tool-button" type="button">2.ply</button>
+          <button id="fitCloud" class="icon-button" type="button" title="适配视图">⌂</button>
+        </div>
+        <div id="cloudStatus" class="status">准备加载 1.ply</div>
+      </section>
+
+      <aside class="pose-panel" aria-label="相机位姿">
+        <div class="panel-title">当前位姿</div>
+        <button class="pose-button active" type="button" data-cloud="1" data-pose="front">
+          <span>位姿 01</span>
+          <strong>区域 1</strong>
+        </button>
+        <button class="pose-button" type="button" data-cloud="2" data-pose="front">
+          <span>位姿 02</span>
+          <strong>区域 2</strong>
+        </button>
+      </aside>
+
+      <section class="splat-preview" aria-label="高斯泼溅预览">
+        <div id="splatViewport" class="viewport"></div>
+        <div id="poseOverlay" class="pose-overlay" aria-label="高斯泼溅相机位姿选择"></div>
+        <div id="splatStatus" class="mini-status">加载高斯模型</div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
