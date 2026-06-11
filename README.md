@@ -8,8 +8,8 @@
 - `app/main.js`：高斯导航、点云加载、位姿标记逻辑
 - `app/styles.css`：界面样式
 - `app/pose_assets.json`：从点云表面生成的位姿锚点和遮挡采样点
-- `1.ply` / `2.ply`：已经对齐好的高清点云块
-- `MIC_3DGS_aligned_preserved.ply`：保留 3DGS 属性并按点云坐标对齐后的高斯泼溅模型
+- `data/1.ply` / `data/2.ply`：已经对齐好的高清点云块（不入库，手动放入）
+- `data/MIC_3DGS_aligned_preserved.ply`：保留 3DGS 属性并按点云坐标对齐后的高斯泼溅模型（不入库）
 - `build_pose_assets.py`：从点云生成 `app/pose_assets.json`
 - `repair_3dgs_alignment.py`：从 CloudCompare 对齐结果反推变换，修复生成可加载的对齐 3DGS
 - `open3d_pose_cloud_viewer.py`：Open3D 版本的点云/位姿查看器实验脚本
@@ -32,7 +32,7 @@ http://127.0.0.1:8000/app/
 
 ## 重新生成位姿锚点
 
-如果更新了 `1.ply`、`2.ply` 或新增点云块，运行：
+如果更新了 `data/1.ply`、`data/2.ply` 或新增点云块，运行：
 
 ```powershell
 python .\build_pose_assets.py
