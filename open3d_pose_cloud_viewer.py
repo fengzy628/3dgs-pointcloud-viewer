@@ -464,7 +464,7 @@ def build_entries(
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Open3D viewer for aligned clouds with clickable pose markers.")
-    parser.add_argument("--data-dir", type=Path, default=Path("."), help="Folder containing PLY files.")
+    parser.add_argument("--data-dir", type=Path, default=Path("data"), help="Folder containing PLY files.")
     parser.add_argument("--cloud", action="append", default=[], help="PLY filename to include. Repeatable.")
     parser.add_argument("--poses", type=Path, default=None, help="Optional JSON: cloud stem/name -> [x,y,z] or 4x4 pose.")
     parser.add_argument("--overview-voxel", type=float, default=0.02, help="Voxel size for merged overview cloud.")
