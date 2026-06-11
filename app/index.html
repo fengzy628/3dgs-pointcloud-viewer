@@ -16,7 +16,7 @@
     </script>
   </head>
   <body>
-    <main class="shell">
+    <main id="appShell" class="shell mode-splat">
       <section class="point-stage" aria-label="高清点云视窗">
         <div id="pointCloudViewport" class="viewport"></div>
         <div class="topbar">
@@ -24,7 +24,7 @@
           <button id="loadCloud2" class="tool-button" type="button">2.ply</button>
           <button id="fitCloud" class="icon-button" type="button" title="适配视图">⌂</button>
         </div>
-        <div id="cloudStatus" class="status">准备加载 1.ply</div>
+        <div id="cloudStatus" class="status">请选择高斯模型上的位置</div>
       </section>
 
       <aside class="pose-panel" aria-label="相机位姿">
@@ -39,13 +39,22 @@
         </button>
       </aside>
 
-      <section class="splat-preview" aria-label="高斯泼溅预览">
+      <section class="splat-preview" aria-label="高斯泼溅导航">
         <div id="splatViewport" class="viewport"></div>
         <div id="poseOverlay" class="pose-overlay" aria-label="高斯泼溅相机位姿选择"></div>
+        <button id="expandSplat" class="expand-splat" type="button" title="放大高斯导航">⛶</button>
+        <div class="splat-viewbar" aria-label="高斯视角校准">
+          <button type="button" data-splat-view="front-y">+Y</button>
+          <button type="button" data-splat-view="back-y">-Y</button>
+          <button type="button" data-splat-view="front-x">+X</button>
+          <button type="button" data-splat-view="back-x">-X</button>
+          <button type="button" data-splat-view="front-z">+Z</button>
+          <button type="button" data-splat-view="back-z">-Z</button>
+        </div>
         <div id="splatStatus" class="mini-status">加载高斯模型</div>
       </section>
     </main>
 
-    <script type="module" src="./main.js"></script>
+    <script type="module" src="./main.js?v=20260611-splat-mode-1"></script>
   </body>
 </html>

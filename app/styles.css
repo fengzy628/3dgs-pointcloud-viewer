@@ -37,11 +37,24 @@ button {
   background: #15171b;
 }
 
+.shell.mode-splat {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .point-stage,
 .splat-preview {
   position: relative;
   min-width: 0;
   min-height: 0;
+}
+
+.mode-splat .point-stage,
+.mode-splat .pose-panel {
+  display: none;
+}
+
+.mode-detail .point-stage {
+  display: block;
 }
 
 .viewport {
@@ -146,6 +159,76 @@ button {
   box-shadow: 0 16px 46px rgba(0, 0, 0, 0.42);
 }
 
+.mode-splat .splat-preview {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  box-shadow: none;
+}
+
+.mode-detail .splat-preview {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  width: min(540px, calc(100vw - 208px));
+  height: min(390px, 48vh);
+}
+
+.splat-preview:focus-within {
+  border-color: rgba(83, 199, 178, 0.72);
+}
+
+.splat-preview canvas,
+#splatViewport {
+  cursor: grab;
+  outline: none;
+}
+
+#splatViewport:active {
+  cursor: grabbing;
+}
+
+.splat-viewbar {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 4px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  background: rgba(12, 13, 16, 0.72);
+  pointer-events: auto;
+}
+
+.splat-viewbar button {
+  height: 24px;
+  min-width: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.expand-splat {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 3;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  background: rgba(12, 13, 16, 0.78);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.mode-splat .expand-splat {
+  display: none;
+}
+
 .pose-overlay {
   position: absolute;
   inset: 0;
@@ -242,5 +325,11 @@ canvas {
     width: min(340px, calc(100vw - 32px));
     height: 240px;
     bottom: 108px;
+  }
+
+  .mode-splat .splat-preview {
+    width: 100%;
+    height: 100%;
+    bottom: auto;
   }
 }
